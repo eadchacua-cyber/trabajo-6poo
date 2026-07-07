@@ -1,0 +1,52 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+# Ruta de inicio (opcional, para saber que funciona)
+@app.route("/", methods=["GET"])
+def inicio():
+    return jsonify({"mensaje": "Bienvenido al instituto yavirac listos para empezar"})
+
+# ==========================
+# RUTA: LUNES
+# ==========================
+@app.route("/lunes", methods=["GET"])
+def ruta_lunes():
+    return jsonify({
+        "dia": "Lunes",
+        "mensaje": "Comenzando la semana con toda la actitud en el instituto"
+    })
+
+# ==========================
+# RUTA: MARTES
+# ==========================
+@app.route("/martes", methods=["GET"])
+def ruta_martes():
+    return jsonify({
+        "dia": "Martes",
+        "mensaje": "Segundo día de clases de poo, comprendiendo rutas en Flask"
+    })
+
+# ==========================
+# RUTA: MIÉRCOLES
+# ==========================
+@app.route("/miercoles", methods=["GET"])
+def ruta_miercoles():
+    return jsonify({
+        "dia": "Miércoles",
+        "mensaje": "Mitad de semana, poo se esta haciendo dificil"
+    })
+
+# ==========================
+# RUTA: JUEVES
+# ==========================
+@app.route("/jueves", methods=["GET"])
+def ruta_jueves():
+    return jsonify({
+        "dia": "Jueves",
+        "mensaje": "Casi viernes, tratando de remontar"
+    })
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
